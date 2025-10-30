@@ -20,6 +20,7 @@ public class EnemyTank extends Tank implements Runnable {
             //判斷方向 創建子彈
 
             Shot s = null;
+            //555
 
             switch (getDirection()) {
                 case 0:
