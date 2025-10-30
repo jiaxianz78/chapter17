@@ -25,7 +25,7 @@ public class MyPanel extends JPanel implements KeyListener, Runnable {
 
     public MyPanel() {
         // 初始化自己坦克
-        hero = new Hero(100, 100);
+        hero = new Hero(500, 100);
 
         //初始化敵對坦克
         for (int i = 0; i < enemyTanksSize; i++) {
@@ -56,11 +56,11 @@ public class MyPanel extends JPanel implements KeyListener, Runnable {
     public void paint(Graphics g) {
         super.paint(g);
         g.fillRect(0, 0, 1000, 1000); //填充矩行背板 默認黑色
-        if (hero != null && hero.is_Live) {
+
+        if (hero != null && hero.isLive) {
             drawTank(hero.getX(), hero.getY(), g, hero.getDirection(), 1);
         }
         //畫出坦克 封裝方法
-        drawTank(hero.getX(), hero.getY(), g, hero.getDirection(), 1);
 
         //畫hero子彈
 //        if (hero.shot != null && hero.shot.isLive != false) {
@@ -186,7 +186,7 @@ public class MyPanel extends JPanel implements KeyListener, Runnable {
 
                 Shot shot = enemyTank.shots.get(j);
 
-                if (hero.is_Live && shot.isLive) {
+                if (hero.isLive && shot.isLive) {
                     hitTank(shot, hero);
                 }
 
@@ -219,6 +219,7 @@ public class MyPanel extends JPanel implements KeyListener, Runnable {
                         && s.y > enemyTank.getY() && s.y < enemyTank.getY() + 60) {
                     s.isLive = false;
                     enemyTank.isLive = false;
+
                     //敵對坦克被擊中從 Vector移出
                     enemyTanks.remove(enemyTank);
                     //創建Boom 加入booms集合中

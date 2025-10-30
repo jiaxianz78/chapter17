@@ -5,7 +5,7 @@ public class Tank {
     private int y;//坦克y座標
     private int direction;//坦克方向 0 1 2 3 上右下左
     private int speed = 8;
-    boolean is_Live = true;
+    boolean isLive = true;
 
 
     //上右下左移動
@@ -58,6 +58,14 @@ public class Tank {
 
     public int getDirection() {
         return direction;
+    }
+
+    public boolean isIs_Live() {
+        return isLive;
+    }
+
+    public void setIs_Live(boolean is_Live) {
+        this.isLive = is_Live;
     }
 
     public void setDirection(int direction) {
