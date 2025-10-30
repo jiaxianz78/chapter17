@@ -5,6 +5,7 @@ public class Tank {
     private int y;//坦克y座標
     private int direction;//坦克方向 0 1 2 3 上右下左
     private int speed = 8;
+    boolean is_Live = true;
 
 
     //上右下左移動
